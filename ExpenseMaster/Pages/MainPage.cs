@@ -32,25 +32,24 @@ namespace ExpenseMaster.Pages
 
         public MainPage()
         {
-            var listView = new ListView(ListViewCachingStrategy.RecycleElement);
-            listView.HasUnevenRows = true;
-            listView.SelectionMode = ListViewSelectionMode.None;
-            listView.ItemsSource = new[]
+            var listView = new ListView(ListViewCachingStrategy.RecycleElement)
             {
-                new TotalInfo
+                HasUnevenRows = true,
+                SelectionMode = ListViewSelectionMode.None,
+                ItemsSource = new[]
                 {
-                    SavedMoney = 100,
-                    TotalSpent = 120
-                }
+                    new TotalInfo
+                    {
+                        SavedMoney = 100,
+                        TotalSpent = 120
+                    }
+                },
+
+                ItemTemplate = new DataTemplate(typeof(MainPageFrame))
             };
-
-            
-
-            listView.ItemTemplate = new DataTemplate(typeof(MainPageFrame));
-            
 
             Content = listView;
         }
-            
+
     }
 }

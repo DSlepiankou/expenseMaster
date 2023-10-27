@@ -7,7 +7,7 @@
     xmlns:pages="clr-namespace:ExpenseMaster.Pages"
     Shell.FlyoutBehavior="Flyout">
 
-    <FlyoutItem Title="Menu"
+    <FlyoutItem Title="Main"
              Icon="dotnet_bot.svg">
         <Tab>
             <ShellContent
@@ -16,13 +16,13 @@
                 Route="MainPage"/>
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Menu"
+    <FlyoutItem Title="Expenses"
              Icon="dotnet_bot.svg">
         <Tab>
             <ShellContent
                 Title="Search"
                 ContentTemplate="{DataTemplate pages:AnotherPage}"
-                Route="MainPage" />
+                Route="AnotherPage" />
         </Tab>
     </FlyoutItem>
     
