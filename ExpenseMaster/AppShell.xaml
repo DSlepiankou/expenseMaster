@@ -21,7 +21,7 @@
         <Tab>
             <ShellContent
                 Title="Search"
-                ContentTemplate="{DataTemplate pages:AnotherPage}"
+                ContentTemplate="{DataTemplate pages:ExpensesCategory}"
                 Route="AnotherPage" />
         </Tab>
     </FlyoutItem>
