@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using ExpenseMaster.Models;
+using ExpenseMaster.Repositories;
+using Microsoft.Extensions.Logging;
 
 namespace ExpenseMaster
 {
@@ -15,8 +17,13 @@ namespace ExpenseMaster
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            DependencyService.Register<IExpenseItemRepository, ExpensesItemRepository>();
+            DependencyService.Register<IRepository<Expense>, Repository<Expense>>();
+            //builder.Services.AddSingleton<IRepository<Expense>, Repository<Expense>>();
+            //builder.Services.AddSingleton<IExpenseItemRepository, ExpensesItemRepository>();
+
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

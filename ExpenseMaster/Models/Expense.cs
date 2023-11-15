@@ -1,7 +1,12 @@
-﻿namespace ExpenseMaster.Models
+﻿using SQLite;
+
+namespace ExpenseMaster.Models
 {
     public class Expense
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
         public string ExpensesName { get; set; }
 
         public string Currency { get; set; }
