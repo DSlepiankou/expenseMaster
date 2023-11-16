@@ -44,6 +44,17 @@ namespace ExpenseMaster.Pages
         .Padding(20, 0)
         .Height(33);
 
+        ImageButton buttnImg = new ImageButton
+        {
+            Source = "gift.png",
+            BorderColor = Colors.Red,
+            WidthRequest = 100,
+            HeightRequest = 100,
+            Aspect = Aspect.AspectFill,
+            IsEnabled = true,
+            IsVisible = true
+        };
+
         public ExpensesCategory()
         {
             picker.Items.Add("1");
@@ -68,12 +79,13 @@ namespace ExpenseMaster.Pages
                     .Row(1),
                 }
             };
+            
 
             addNewOptionButton.Clicked += ButtonForAddNewOption;
             newOptionsApplied.Clicked += NewOptionsApplied_Clicked;
             Content = new StackLayout
             {
-                Children = { label, picker, addNewOptionButton, newOptionsGrid },
+                Children = { label, picker, addNewOptionButton, newOptionsGrid, buttnImg },
                 Padding = 15,
                 Spacing = 10,
             };
